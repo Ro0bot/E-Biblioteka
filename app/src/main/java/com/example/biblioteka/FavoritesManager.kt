@@ -25,7 +25,6 @@ object FavoritesManager {
         if (title == null) return false
         return getFavorites(context).any { it.title == title }
     }
-
     fun removeFavorite(context: Context, title: String?) {
         if (title == null) return
         val favorites = getFavorites(context)

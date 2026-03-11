@@ -34,9 +34,7 @@ class BookDetailsActivity : AppCompatActivity() {
                 favButton.text = "Dodaj do ulubionych"
             }
         }
-
         updateButton()
-
         favButton.setOnClickListener {
             if (FavoritesManager.isFavorite(this, title)) {
                 FavoritesManager.removeFavorite(this, title)
@@ -52,11 +50,9 @@ class BookDetailsActivity : AppCompatActivity() {
             }
             updateButton()
         }
-
         findViewById<Button>(R.id.powrot).setOnClickListener {
             finish()
         }
-
         val opiniaEditText = findViewById<EditText>(R.id.opiniaEditText)
         val dodajOpinieButton = findViewById<Button>(R.id.dodajOpinieButton)
         val opinieRecyclerView = findViewById<RecyclerView>(R.id.opinieRecyclerView)
@@ -73,7 +69,6 @@ class BookDetailsActivity : AppCompatActivity() {
             }
         }
         loadOpinie()
-
         dodajOpinieButton.setOnClickListener {
             val text = opiniaEditText.text.toString().trim()
             if (text.isEmpty()) {
@@ -88,6 +83,5 @@ class BookDetailsActivity : AppCompatActivity() {
             opiniaEditText.text.clear()
             loadOpinie()
         }
-
     }
 }

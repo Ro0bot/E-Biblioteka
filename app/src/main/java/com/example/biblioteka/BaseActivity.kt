@@ -51,7 +51,7 @@ class BaseActivity : AppCompatActivity() {
                 Toast.makeText(this, "Brak ulubionych", Toast.LENGTH_SHORT).show()
             } else {
                 recyclerView.adapter = BooksAdapter(favorites) { ksiazka ->
-                    val intent = Intent(this, BookDetailsActivity::class.java)
+                    val intent = Intent(this@BaseActivity, BookDetailsActivity::class.java)
                     intent.putExtra("title", ksiazka.title)
                     intent.putExtra("author", ksiazka.author_name?.joinToString())
                     intent.putExtra("year", ksiazka.first_publish_year?.toString())
